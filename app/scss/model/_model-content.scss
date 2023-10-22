@@ -1,0 +1,376 @@
+.model-content {
+  margin-bottom: 55px;
+
+  &__inner,
+  &__content {
+    display: flex;
+  }
+
+  &__inner {
+    border-radius: 16px;
+    background-color: $black200;
+    padding: 32px 24px;
+    gap: 48px;
+    @media (max-width: 1400px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+    @include r($tablet) {
+      gap: 40px;
+    }
+    @include r($sm) {
+      padding: 25px 15px;
+    }
+  }
+
+  &__slider {
+    max-width: 475px;
+    max-height: 475px;
+    width: 100%;
+    @media (max-width: 1400px) {
+      max-width: 600px;
+      max-height: 600px;
+      align-self: flex-start;
+      border-radius: 10px;
+      .swiper-slide {
+        max-height: 600px;
+      }
+    }
+    @include r($tablet) {
+      .swiper-slide {
+        height: 600px;
+      }
+    }
+    @include r($sm) {
+      max-height: 550px;
+      .swiper-slide {
+        height: 550px;
+      }
+    }
+    @include r($phone) {
+      max-height: 450px;
+      .swiper-slide {
+        height: 450px;
+      }
+    }
+  }
+
+  &__buttons {
+    position: absolute;
+    @include top50;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+    right: 15px;
+    left: 15px;
+  }
+
+  &__arrow {
+    @include flex-center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid $accent;
+    background-color: $accent;
+    transition: background-color .3s, opacity .3s;
+
+    &:hover {
+      background-color: transparent;
+
+      .path {
+        fill: $white;
+      }
+    }
+
+    &:focus {
+      opacity: .6;
+    }
+  }
+
+  &__pagination {
+    position: absolute;
+    bottom: 20px !important;
+    @include flex-center;
+    z-index: 100;
+
+    .swiper-pagination-bullet {
+      background-color: #D9D9D9;
+      opacity: 1;
+      transition: background-color .3s;
+
+      &-active {
+        background-color: $accent;
+      }
+    }
+  }
+
+  &__img {
+    @include objectCoverBg;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    @include r($tablet) {
+      height: 100%;
+    }
+
+    .swiper-slide {
+      max-height: 600px;
+    }
+  }
+
+  &__content {
+    gap: 30px;
+    width: 100%;
+    @media (max-width: 1400px) {
+      flex-direction: column;
+      gap: 60px;
+    }
+    @include r($tablet) {
+      gap: 45px;
+    }
+  }
+
+  &__right,
+  &__options,
+  &__pricing-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__right {
+    margin-left: auto;
+    max-width: 385px;
+    width: 100%;
+    @media (max-width: 1400px) {
+      margin-left: 0;
+      max-width: 470px;
+    }
+    @include r($sm) {
+      max-width: 100%;
+    }
+  }
+
+  &__address {
+    font-weight: 600;
+    color: $gray100;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  &__name {
+    line-height: 1.2;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    @media (max-width: 1400px) {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+    @include r($sm) {
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
+    @media (max-width: 380px) {
+      font-size: 22px;
+    }
+  }
+
+  &__options {
+    gap: 22px;
+    font-size: 14px;
+    line-height: 1;
+
+    &-name {
+      color: $gray100;
+      font-weight: 500;
+    }
+
+    &-value {
+      font-weight: 700;
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    @media (max-width: 400px) {
+      justify-content: space-between;
+    }
+  }
+
+  &__decor {
+    background-color: #312F38;
+    height: 1px;
+    flex: 1;
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  &__online {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: $gray100;
+    text-align: right;
+    margin-bottom: 75px;
+    @media (max-width: 1400px) {
+      margin-bottom: 35px;
+      text-align: left;
+    }
+    @include r($sm) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__pricing {
+    display: flex;
+    gap: 65px;
+    margin-bottom: 30px;
+    @include r($sm) {
+      gap: 120px;
+    }
+    @media (max-width: 560px) {
+      flex-direction: column;
+      gap: 30px;
+      max-width: 250px;
+      width: 100%;
+    }
+    @include r($phone) {
+      max-width: 100%;
+    }
+
+    &-column {
+      width: 100%;
+    }
+
+    &-list {
+      gap: 15px;
+    }
+
+    &-item {
+      align-items: center;
+      display: flex;
+      gap: 10px;
+      justify-content: space-between;
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    &-name {
+      font-weight: 600;
+      letter-spacing: 0.28px;
+      color: $gray100;
+    }
+
+    &-value {
+      font-weight: 700;
+      padding: 6px;
+      border-radius: 7px;
+      background-color: #313033;
+    }
+  }
+
+  &__subname {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    display: block;
+    @media (max-width: 1400px) {
+      text-align: left;
+    }
+    @include r($sm) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__danger {
+    color: $accent;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: right;
+    margin-bottom: 40px;
+    @media (max-width: 1400px) {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__social {
+    background-color: #313033;
+    border-radius: 16px;
+    padding: 8px;
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+    align-self: flex-end;
+    @media (max-width: 1400px) {
+      align-self: flex-start;
+    }
+    @include r($phone) {
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  &__btn,
+  &__link {
+    border-radius: 8px;
+  }
+
+  &__btn {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 9px 18px;
+    min-height: 42px;
+    @include r($phone) {
+      justify-content: center;
+    }
+
+    &:hover {
+      .path {
+        stroke: $white;
+      }
+    }
+  }
+
+  &__link {
+    height: 100%;
+    width: 62px;
+    @include flex-center;
+    border: 2px solid transparent;
+    transition: background-color .3s, opacity .3s;
+    @media (max-width: 1400px) {
+      height: auto;
+    }
+    @include r($phone) {
+      height: 42px;
+      width: 100%;
+    }
+
+    &:focus {
+      opacity: .6;
+    }
+
+    &--whatsapp {
+      background-color: $green700;
+
+      &:hover {
+        border-color: $green700;
+        background-color: transparent;
+      }
+    }
+
+    &--telegram {
+      background-color: $blue;
+
+      &:hover {
+        border-color: $blue;
+        background-color: transparent;
+      }
+    }
+  }
+}

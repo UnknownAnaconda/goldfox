@@ -1,0 +1,209 @@
+.filters {
+  margin-bottom: 50px;
+  overflow-x: hidden;
+
+  .container {
+    @include r($lg) {
+      padding-right: 0;
+    }
+  }
+
+  &__top,
+  &__content-top,
+  &__btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__top {
+    gap: 40px;
+    justify-content: space-between;
+    @include r($desktop) {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+    }
+  }
+
+  &__selectors {
+    display: flex;
+    gap: 12px;
+    line-height: 1;
+    @include r($lg) {
+      overflow-x: scroll;
+      width: 100%;
+      padding-right: 15px;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__select-btn {
+    border: 2px solid #605D62;
+    padding: 17px 24px;
+    border-radius: 14px;
+    transition: color .3s, opacity .3s, background-color .3s, border .3s;
+    font-weight: 700;
+    @include r($sm) {
+      padding: 15px 20px;
+    }
+
+    &:hover {
+      background-color: $accent;
+      border-color: transparent;
+      color: $black200;
+    }
+
+    &:focus {
+      opacity: .5;
+    }
+
+    &--vip {
+      margin-right: 12px;
+      position: relative;
+
+      &:hover {
+        background-color: $accent;
+        color: #000;
+      }
+
+      &::after {
+        @include pseudo;
+        @include top50;
+        height: 90%;
+        width: 2px;
+        right: -15px;
+        background-color: #48464A;
+      }
+    }
+  }
+
+  &__btn {
+    gap: 10px;
+    padding: 13px 18px;
+
+    &:hover {
+      color: $gray100;
+
+      .filters__path {
+        stroke: $gray100;
+      }
+    }
+
+    &.active {
+      background-color: transparent;
+      border-color: $accent;
+      color: $gray100;
+
+      .filters__path {
+        stroke: $gray100;
+      }
+    }
+  }
+
+  &__path {
+    transition: all .3s;
+  }
+
+  &__content {
+    height: 0;
+    overflow: hidden;
+    transition: height .6s ease-in-out, margin-top .6s ease-in-out;
+  }
+
+  &__content-top {
+    padding-left: 16px;
+    gap: 32px;
+    margin-bottom: 75px;
+    @include r($tablet) {
+      flex-direction: column;
+      gap: 25px;
+      align-items: flex-start;
+      margin-bottom: 45px;
+    }
+    @include r($sm) {
+      padding-left: 0;
+    }
+  }
+
+  &__content-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 100px;
+    @media (max-width: 1400px) {
+      grid-gap: 70px;
+    }
+    @include r($desktop) {
+      grid-gap: 50px;
+      padding-left: 16px;
+    }
+    @include r($lg) {
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+    @include r($tablet) {
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    }
+    @include r($sm) {
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      padding-left: 0;
+      grid-gap: 40px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    @include r($sm) {
+      gap: 40px;
+    }
+
+    &--one {
+      padding-left: 32px;
+      @include r($desktop) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    display: block;
+    position: relative;
+
+    &::after {
+      @include pseudo;
+      width: 185px;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #313033;
+    }
+  }
+
+  &__chapter {
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      @include r($phone) {
+        gap: 19px;
+      }
+    }
+
+    &-item {
+      display: flex;
+    }
+  }
+}
