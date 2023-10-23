@@ -1,0 +1,17 @@
+@include('components/_head.html', {
+title: 'GoldFox | Регистрация'
+})
+
+@include('components/_header.html')
+<main>
+    @include('registration/_registration-start.html')
+    <div class="registration__filters">
+        <div class="container">
+            @include('components/_filters-list.html')
+        </div>
+    </div>
+</main>
+@include('components/_footer.html')
+@include('components/_end.html', {
+src1: 'src="js/model-page.js"'
+})
