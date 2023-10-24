@@ -1,9 +1,62 @@
 .registration {
+  margin-bottom: 55px;
+
   &__title {
     margin-bottom: 40px;
     font-size: 32px;
     letter-spacing: 0.48px;
     font-weight: 700;
-    padding-left: 24px;
+    padding-left: 32px;
+  }
+
+  &__subtitle {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  &__filters {
+    margin-bottom: 44px;
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 48px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 24px;
+  }
+
+  &__item {
+    &--two {
+      display: flex;
+      gap: 24px;
+    }
+  }
+
+  &__password {
+    position: relative;
+  }
+
+  &__control {
+    @include bg;
+    @include top50;
+    right: 16px;
+    position: absolute;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/icons/eye.svg");
+    transition: opacity .3s;
+    opacity: .6;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }

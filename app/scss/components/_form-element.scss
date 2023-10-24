@@ -1,10 +1,12 @@
 .field {
   background-color: #313033;
   font-weight: 600;
-  padding: 13px 16px;
+  padding: 16px 16px;
   display: block;
   border: 2px solid transparent;
   width: 100%;
+  font-size: 14px;
+  line-height: 1;
   border-radius: 14px;
   color: $white;
   transition: color .3s, opacity .3s, background-color .3s;
@@ -27,13 +29,23 @@
 }
 
 .textarea {
-  min-height: 120px;
+  min-height: 250px;
   max-height: 320px;
   resize: vertical;
 
   &--big {
     min-height: 250px;
   }
+}
+
+.label {
+  font-size: 14px;
+  color: $gray100;
+  padding: 8px;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
+  font-family: $inter;
 }
 
 .jq-ry-container {

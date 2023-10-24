@@ -30,7 +30,86 @@
     <section class="registration">
     <div class="container">
         <h1 class="registration__title">Регистрация модели</h1>
-        
+        <ul class="registration__columns">
+            <li class="registration__column">
+                <div class="registration__item">
+                    <label class="label" for="login">Логин</label>
+                    <input class="field" type="text" id="login" name="login" required placeholder="Придумайте логин">
+                </div>
+                <div class="registration__item">
+                    <label class="label" for="password">Пароль</label>
+                    <div class="registration__password">
+                        <input class="field" type="password" id="password" name="password" required
+                               placeholder="Придумайте пароль">
+                        <a class="registration__control" href="#"></a>
+                    </div>
+                </div>
+                <div class="registration__item">
+                    <label class="label" for="email">Электронная почта</label>
+                    <input class="field" type="email" id="email" name="email" required placeholder="Введите вашу почту">
+                </div>
+            </li>
+            <li class="registration__column">
+                <div class="registration__item">
+                    <label class="label" for="nickname">Ваш псевдоним</label>
+                    <input class="field" type="text" id="nickname" name="nickname" required
+                           placeholder="Введите псевдоним">
+                </div>
+                <div class="registration__item registration__item--two">
+                    <div>
+                        <label class="label" for="age">Возраст</label>
+                        <input class="field" type="number" id="age" name="age" required placeholder="Введите возраст">
+                    </div>
+                    <div>
+                        <label class="label" for="breast">Грудь</label>
+                        <input class="field" type="number" id="breast" name="breast" required
+                               placeholder="Введите размер">
+                    </div>
+                </div>
+                <div class="registration__item registration__item--two">
+                    <div>
+                        <label class="label" for="weight">Вес (в кг)</label>
+                        <input class="field" type="number" id="weight" name="weight" required placeholder="Введите вес">
+                    </div>
+                    <div>
+                        <label class="label" for="height">Рост (в см)</label>
+                        <input class="field" type="number" id="height" name="height" required
+                               placeholder="Введите рост">
+                    </div>
+                </div>
+            </li>
+            <li class="registration__column">
+                <div class="registration__item registration__item--two">
+                    <div>
+                        <label class="label" for="haircut">Интимная стрижка</label>
+                        <input class="field" type="text" id="haircut" name="haircut" required
+                               placeholder="Введите значение">
+                    </div>
+                    <div>
+                        <label class="label" for="appearance">Внешность</label>
+                        <input class="field" type="text" id="appearance" name="appearance" required
+                               placeholder="Введите внешность">
+                    </div>
+                </div>
+                <div class="registration__item registration__item--two">
+                    <div>
+                        <label class="label" for="hair_color">Цвет волос</label>
+                        <input class="field" type="text" id="hair_color" name="hair_color" required
+                               placeholder="Введите цвет">
+                    </div>
+                    <div>
+                        <label class="label" for="nationality">Национальность</label>
+                        <input class="field" type="text" id="nationality" name="nationality" required
+                               placeholder="Введите рост">
+                    </div>
+                </div>
+                <div class="registration__item">
+                    <label class="label" for="area">Район</label>
+                    <input class="field" type="text" id="area" name="area" required
+                           placeholder="Введите район">
+                </div>
+            </li>
+        </ul>
     </div>
 </section>
     <div class="registration__filters">
@@ -491,6 +570,85 @@
 </ul>
         </div>
     </div>
+    <div class="container">
+    <ul class="registration__columns">
+        <li class="registration__column">
+            <div class="registration__item">
+                <label class="label" for="age_limit_ot">Ограничение по возрасту</label>
+                <div class="registration__item--two">
+                    <input class="field" type="number" id="age_limit_ot" name="age_limit_ot" required placeholder="От">
+                    <input class="field" type="number" id="age_limit_do" name="age_limit_do" required placeholder="До">
+                </div>
+            </div>
+            <div class="registration__item">
+                <label class="label" for="work_limit">Время работы</label>
+                <div class="registration__item--two">
+                    <input class="field" type="number" id="work_limit_ot" name="age_limit_ot" required placeholder="От">
+                    <input class="field" type="number" id="work_limit_do" name="age_limit_do" required placeholder="До">
+                </div>
+            </div>
+            <div class="registration__item">
+                <label class="label" for="phone_clients">Номер телефона для клиентов</label>
+                <input class="field" type="text" id="phone_clients" name="phone_clients" required
+                       placeholder="Введите номер телефона">
+            </div>
+            <div class="registration__item">
+                <label class="label" for="phone_admin">
+                    Ваши контактные данные для связи (Увидит только Администрация)
+                </label>
+                <input class="field" type="text" id="phone_admin" name="phone_admin" required
+                       placeholder="Введите номер телефона">
+            </div>
+            <div class="registration__item">
+                <label class="label" for="telegram">Ваш Telegram</label>
+                <input class="field" type="text" id="telegram" name="telegram" required placeholder="Введите ваш тег">
+            </div>
+            <div class="registration__item">
+                <label class="label" for="whatsapp">Ваш номер Whatsapp</label>
+                <input class="field" type="text" id="whatsapp" name="whatsapp" required placeholder="Введите ваш номер">
+            </div>
+        </li>
+        <li class="registration__column">
+            <div class="registration__item">
+                <label class="label" for="description">Описание для клиентов</label>
+                <textarea class="field textarea" type="text" id="description" name="description" required placeholder="Введите описание"></textarea>
+            </div>
+        </li>
+        <li class="registration__column">
+
+
+            <div class="registration__item registration__item--two">
+                <div>
+                    <label class="label" for="haircut">Интимная стрижка</label>
+                    <input class="field" type="text" id="haircut" name="haircut" required
+                           placeholder="Введите значение">
+                </div>
+                <div>
+                    <label class="label" for="appearance">Внешность</label>
+                    <input class="field" type="text" id="appearance" name="appearance" required
+                           placeholder="Введите внешность">
+                </div>
+            </div>
+            <div class="registration__item registration__item--two">
+                <div>
+                    <label class="label" for="hair_color">Цвет волос</label>
+                    <input class="field" type="text" id="hair_color" name="hair_color" required
+                           placeholder="Введите цвет">
+                </div>
+                <div>
+                    <label class="label" for="nationality">Национальность</label>
+                    <input class="field" type="text" id="nationality" name="nationality" required
+                           placeholder="Введите рост">
+                </div>
+            </div>
+            <div class="registration__item">
+                <label class="label" for="area">Район</label>
+                <input class="field" type="text" id="area" name="area" required
+                       placeholder="Введите район">
+            </div>
+        </li>
+    </ul>
+</div>
 </main>
 <footer class="footer">
     <div class="container">
@@ -543,4 +701,4 @@
     </div>
 </footer>
 <script src="js/main.min.js" type="module"></script>
-<script src="js/model-page.js" type="module"></script>
+<script src="js/registration.js" type="module"></script>
