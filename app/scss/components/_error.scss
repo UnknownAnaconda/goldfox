@@ -5,6 +5,12 @@
   font-weight: 400;
   font-size: 14px;
 
+  &__registration {
+    margin-top: -4px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+  }
+
   &--active {
     display: block;
   }

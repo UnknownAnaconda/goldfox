@@ -1,6 +1,10 @@
 .registration {
   margin-bottom: 55px;
 
+  &__form {
+    margin-bottom: 80px;
+  }
+
   &__title {
     margin-bottom: 40px;
     font-size: 32px;
@@ -13,6 +17,7 @@
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 16px;
+    padding-left: 8px;
   }
 
   &__filters {
@@ -30,12 +35,34 @@
     flex-direction: column;
     gap: 18px;
     padding: 0 24px;
+
+    &--bifurcation {
+      .registration__item {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  }
+
+  &__bifurcation {
+    display: flex;
+    gap: 24px;
   }
 
   &__item {
     &--two {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px;
+    }
+
+    &--photo {
+      margin-top: 22px;
       display: flex;
-      gap: 24px;
+      flex-direction: column;
+      gap: 16px;
+      align-self: flex-start;
     }
   }
 
@@ -58,5 +85,20 @@
     &:hover {
       opacity: 1;
     }
+  }
+
+  &__btn {
+    align-self: flex-end;
+    margin-top: 55px;
+    padding: 17px 30px;
+    &:disabled {
+      pointer-events: none;
+      opacity: .6;
+    }
+  }
+
+  &__label {
+    margin-bottom: 0;
+    cursor: pointer;
   }
 }

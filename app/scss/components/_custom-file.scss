@@ -1,0 +1,64 @@
+.custom-file {
+  &__items {
+    padding-left: 8px;
+    font-size: 14px;
+    flex-direction: column;
+    gap: 28px;
+    font-family: $inter;
+    font-weight: 600;
+    line-height: 1;
+    color: #F4EFF4;
+    display: none;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex;
+    gap: 18px;
+  }
+
+  &__remove {
+    @include flex-center;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+
+    &:hover {
+      svg .path {
+        stroke: $accent;
+      }
+    }
+  }
+
+  &__upload {
+    align-self: flex-start;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 15px 16px 15px 44px;
+    border-radius: 12px;
+    border: 2px solid #605D62;
+    transition: border .3s, color .3s;
+    cursor: pointer;
+    position: relative;
+
+    &::before {
+      @include pseudo;
+      @include top50;
+      @include bg;
+      left: 16px;
+      width: 20px;
+      height: 20px;
+      background-image: url("../images/icons/cloud-download.svg");
+    }
+
+    &:hover {
+      border-color: $accent;
+      color: $accent;
+    }
+  }
+
+  &__input {
+    display: none;
+  }
+}

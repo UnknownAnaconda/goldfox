@@ -1,7 +1,7 @@
 .field {
   background-color: #313033;
   font-weight: 600;
-  padding: 16px 16px;
+  padding: 14px 16px;
   display: block;
   border: 2px solid transparent;
   width: 100%;
@@ -32,6 +32,8 @@
   min-height: 250px;
   max-height: 320px;
   resize: vertical;
+  font: inherit;
+  font-size: 14px;
 
   &--big {
     min-height: 250px;
@@ -43,7 +45,7 @@
   color: $gray100;
   padding: 8px;
   margin-bottom: 8px;
-  display: block;
+  display: inline-block;
   font-weight: 500;
   font-family: $inter;
 }

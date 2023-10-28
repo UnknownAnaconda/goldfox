@@ -3,32 +3,49 @@
         <li class="registration__column">
             <div class="registration__item">
                 <label class="label" for="age_limit_ot">Ограничение по возрасту</label>
+                <span class="error error__registration" id="ageMaxMinLimitErrorLength">
+                    Макс. возраст не может быть меньше минимального
+                </span>
+                <span class="error error__registration" id="ageMinLimitErrorLength">
+                    Мин. возраст не может быть меньше 18
+                </span>
+                <span class="error error__registration" id="ageMaxLimitErrorLength">
+                    Макс. возраст не может быть больше 90
+                </span>
                 <div class="registration__item--two">
                     <input class="field" type="number" id="age_limit_ot" name="age_limit_ot" required placeholder="От">
                     <input class="field" type="number" id="age_limit_do" name="age_limit_do" required placeholder="До">
                 </div>
             </div>
             <div class="registration__item">
-                <label class="label" for="work_limit">Время работы</label>
+                <label class="label" for="work_limit_ot">Время работы</label>
+                <span class="error error__registration" id="work_limitError">
+                    Неверный формат времени, пример - 00:00
+                </span>
                 <div class="registration__item--two">
-                    <input class="field" type="number" id="work_limit_ot" name="age_limit_ot" required placeholder="От">
-                    <input class="field" type="number" id="work_limit_do" name="age_limit_do" required placeholder="До">
+                    <input class="field" type="text" id="work_limit_ot" name="age_limit_ot" required placeholder="От"
+                           data-time-input>
+                    <input class="field" type="text" id="work_limit_do" name="age_limit_do" required placeholder="До"
+                           data-time-input>
                 </div>
             </div>
             <div class="registration__item">
                 <label class="label" for="phone_clients">Номер телефона для клиентов</label>
-                <input class="field" type="text" id="phone_clients" name="phone_clients" required
+                <input class="field" type="text" id="phone_clients" name="phone_clients" data-tel-input required
                        placeholder="Введите номер телефона">
             </div>
             <div class="registration__item">
                 <label class="label" for="phone_admin">
                     Ваши контактные данные для связи (Увидит только Администрация)
                 </label>
-                <input class="field" type="text" id="phone_admin" name="phone_admin" required
+                <input class="field" type="text" id="phone_admin" name="phone_admin" data-tel-input required
                        placeholder="Введите номер телефона">
             </div>
             <div class="registration__item">
-                <label class="label" for="telegram">Ваш Telegram</label>
+                <label class="label" for="telegram">Ваш тег Telegram</label>
+                <span class="error error__registration" id="telegramError">
+                    Запрещенные символы
+                </span>
                 <input class="field" type="text" id="telegram" name="telegram" required placeholder="Введите ваш тег">
             </div>
             <div class="registration__item">
@@ -39,41 +56,109 @@
         <li class="registration__column">
             <div class="registration__item">
                 <label class="label" for="description">Описание для клиентов</label>
-                <textarea class="field textarea" type="text" id="description" name="description" required placeholder="Введите описание"></textarea>
+                <span class="error error__registration" id="descriptionError">
+                    Минимальное количество символов - 80
+                </span>
+                <span class="error error__registration" id="descriptionScriptError">
+                    Запрещенные символы
+                </span>
+                <textarea class="field textarea" id="description" name="description" required
+                          placeholder="Введите описание"></textarea>
+            </div>
+            <div class="registration__item registration__item--photo">
+                <label class="registration__label label" for="fileInput">Ваши фотографии</label>
+                <span class="error error__registration" id="photosError">
+                    Файлы имеют неверный формат
+                </span>
+                <ul class="custom-file__items" id="uploadedImages"></ul>
+                <label class="custom-file__upload" for="fileInput">
+                    Загрузить
+                    <input class="custom-file__input" type="file" id="fileInput" multiple accept="image/png, image/webp, image/jpeg, image/jpg">
+                </label>
             </div>
         </li>
-        <li class="registration__column">
-
-
-            <div class="registration__item registration__item--two">
+        <li class="registration__column registration__column--bifurcation">
+            <div class="registration__bifurcation">
                 <div>
-                    <label class="label" for="haircut">Интимная стрижка</label>
-                    <input class="field" type="text" id="haircut" name="haircut" required
-                           placeholder="Введите значение">
+                    <h3 class="registration__subtitle">Цены у вас</h3>
+                    <div class="registration__item">
+                        <div>
+                            <label class="label" for="express_price">Экспресс</label>
+                            <span class="error error__registration" id="expressPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="express_price" name="express_price" required
+                                   placeholder="От">
+                        </div>
+                        <div>
+                            <label class="label" for="hour1_price">1 час</label>
+                            <span class="error error__registration" id="hour1PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="hour1_price" name="hour1_price" required
+                                   placeholder="От">
+                        </div>
+                        <div>
+                            <label class="label" for="hour2_price">2 часа</label>
+                            <span class="error error__registration" id="hour2PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="hour2_price" name="hour2_price" required
+                                   placeholder="От">
+                        </div>
+                        <div>
+                            <label class="label" for="night_price">Вся ночь</label>
+                            <span class="error error__registration" id="nightPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="night_price" name="night_price" required
+                                   placeholder="От">
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <label class="label" for="appearance">Внешность</label>
-                    <input class="field" type="text" id="appearance" name="appearance" required
-                           placeholder="Введите внешность">
+                    <h3 class="registration__subtitle">Цены у клиента</h3>
+                    <div class="registration__item">
+                        <div>
+                            <label class="label" for="client_express_price">Экспресс</label>
+                            <span class="error error__registration" id="clientExpressPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="client_express_price" name="client_express_price"
+                                   required
+                                   placeholder="От">
+                        </div>
+                        <div>
+                            <label class="label" for="client_hour1_price">1 час</label>
+                            <span class="error error__registration" id="clientHour1PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="client_hour1_price" name="client_hour1_price"
+                                   required
+                                   placeholder="От">
+                        </div>
+                        <div>
+                            <label class="label" for="client_hour2_price">2 часа</label>
+                            <span class="error error__registration" id="clientHour2PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="client_hour2_price" name="client_hour2_price"
+                                   required
+                                   placeholder="От">
+                        </div>
+                        <div>
+                            <label class="label" for="client_night_price">Вся ночь</label>
+                            <span class="error error__registration" id="clientNightPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                            <input class="field" type="number" id="client_night_price" name="client_night_price"
+                                   required
+                                   placeholder="От">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="registration__item registration__item--two">
-                <div>
-                    <label class="label" for="hair_color">Цвет волос</label>
-                    <input class="field" type="text" id="hair_color" name="hair_color" required
-                           placeholder="Введите цвет">
-                </div>
-                <div>
-                    <label class="label" for="nationality">Национальность</label>
-                    <input class="field" type="text" id="nationality" name="nationality" required
-                           placeholder="Введите рост">
-                </div>
-            </div>
-            <div class="registration__item">
-                <label class="label" for="area">Район</label>
-                <input class="field" type="text" id="area" name="area" required
-                       placeholder="Введите район">
-            </div>
+            <button class="registration__btn btn" type="submit" id="submitButton">Зарегистрироваться</button>
         </li>
     </ul>
 </div>

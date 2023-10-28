@@ -1,0 +1,83 @@
+.select {
+  position: absolute;
+  opacity: 0;
+  height: 1px;
+  width: 1px;
+  z-index: -100;
+}
+
+.custom-select {
+  position: relative;
+  font-size: 16px;
+
+  &.field {
+    padding: 0;
+  }
+
+  &--show {
+
+    .custom-select__current {
+      border-radius: 8px 8px 0 0;
+      border-color: $accent;
+
+      &::after {
+        transform: rotate(-180deg) translateY(50%);
+      }
+    }
+
+    .custom-select__list {
+      pointer-events: auto;
+      visibility: visible;
+      opacity: 1;
+      background-color: #313033;
+      z-index: 100;
+    }
+  }
+
+  &__current {
+    padding: 18px 40px 18px 16px;
+    line-height: 1;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    transition: border-radius .3s;
+
+    &::after {
+      @include pseudo;
+      @include top50;
+      right: 15px;
+      width: 14px;
+      height: 8px;
+      background-image: url("../images/icons/select-arrow.svg");
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: transform .3s;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 63px;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 7px;
+    max-height: 230px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s ease;
+  }
+
+  &__item {
+    padding: 15px 16px;
+    cursor: pointer;
+    transition: color .3s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
