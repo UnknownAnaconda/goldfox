@@ -11,6 +11,24 @@
     letter-spacing: 0.48px;
     font-weight: 700;
     padding-left: 32px;
+    @media (max-width: 1460px) {
+      padding-left: 22px;
+    }
+    @include r($desktop) {
+      font-size: 28px;
+      margin-bottom: 30px;
+    }
+    @media (max-width: 1100px) {
+      padding-left: 10px;
+    }
+    @include r($tablet) {
+      padding-left: 0;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+    @include r($sm) {
+      font-size: 24px;
+    }
   }
 
   &__subtitle {
@@ -28,6 +46,30 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 48px;
+    @media (max-width: 1460px) {
+      padding-left: 22px;
+      grid-gap: 70px;
+    }
+    @media (max-width: 1350px) {
+      grid-gap: 50px;
+    }
+    @media (max-width: 1300px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 50px;
+    }
+    @media (max-width: 1100px) {
+      padding-left: 10px;
+    }
+    @include r($lg) {
+      grid-gap: 40px 30px;
+    }
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 18px;
+    }
+    @include r($tablet) {
+      padding-left: 0;
+    }
   }
 
   &__column {
@@ -35,6 +77,9 @@
     flex-direction: column;
     gap: 18px;
     padding: 0 24px;
+    @media (max-width: 1460px) {
+      padding: 0;
+    }
 
     &--bifurcation {
       .registration__item {
@@ -48,6 +93,19 @@
   &__bifurcation {
     display: flex;
     gap: 24px;
+    @media (max-width: 900px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 600px;
+    }
+    @media (max-width: 530px) {
+      grid-gap: 17px;
+    }
+    @include r($phone) {
+      grid-gap: 40px;
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   &__item {
@@ -55,6 +113,12 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 24px;
+      @media (max-width: 530px) {
+        grid-gap: 17px;
+      }
+      @include r($phone) {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
 
     &--photo {
@@ -63,6 +127,10 @@
       flex-direction: column;
       gap: 16px;
       align-self: flex-start;
+      @media (max-width: 900px) {
+        margin-top: 0;
+        margin-bottom: 25px;
+      }
     }
   }
 
@@ -91,6 +159,11 @@
     align-self: flex-end;
     margin-top: 55px;
     padding: 17px 30px;
+    @media (max-width: 1300px) {
+      align-self: flex-start;
+      margin-top: 25px;
+    }
+
     &:disabled {
       pointer-events: none;
       opacity: .6;

@@ -50,7 +50,7 @@
             </div>
             <div class="registration__item">
                 <label class="label" for="whatsapp">Ваш номер Whatsapp</label>
-                <input class="field" type="text" id="whatsapp" name="whatsapp" required placeholder="Введите ваш номер">
+                <input class="field" type="text" id="whatsapp" name="whatsapp" data-tel-input required placeholder="Введите ваш номер">
             </div>
         </li>
         <li class="registration__column">
@@ -67,13 +67,20 @@
             </div>
             <div class="registration__item registration__item--photo">
                 <label class="registration__label label" for="fileInput">Ваши фотографии</label>
-                <span class="error error__registration" id="photosError">
-                    Файлы имеют неверный формат
+                <span class="error error__files" id="photosError">
+                    Ваш файл имеет неверный формат. Пожалуйста, выберите изображение в формате PNG, WebP, JPEG или JPG.
+                </span>
+                <span class="error error__files" id="photosLimitMinError">
+                    Минимальное количество фото - 1
+                </span>
+                <span class="error error__files" id="photosLimitMaxError">
+                    Максимальное количество фото - 8
                 </span>
                 <ul class="custom-file__items" id="uploadedImages"></ul>
                 <label class="custom-file__upload" for="fileInput">
                     Загрузить
-                    <input class="custom-file__input" type="file" id="fileInput" multiple accept="image/png, image/webp, image/jpeg, image/jpg">
+                    <input class="custom-file__input" type="file" id="fileInput" multiple
+                           accept="image/png, image/webp, image/jpeg, image/jpg">
                 </label>
             </div>
         </li>

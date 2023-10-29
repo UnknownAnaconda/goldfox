@@ -4,13 +4,13 @@ title: 'GoldFox | Регистрация'
 
 @include('components/_header.html')
 <main>
-    <form class="registration__form" action="">
+    <form class="registration__form" id="registration__form" action="">
         @include('registration/_registration-start.html')
-        <!--<div class="registration__filters">
+        <div class="registration__filters">
             <div class="container">
                 @include('components/_filters-list.html')
             </div>
-        </div>-->
+        </div>
         @include('registration/_registration-final.html')
     </form>
 </main>

@@ -11,6 +11,10 @@
   color: $white;
   transition: color .3s, opacity .3s, background-color .3s;
 
+  &--password {
+    padding-right: 48px;
+  }
+
   &:hover {
     &::placeholder {
       color: $white;
