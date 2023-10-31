@@ -1,0 +1,33 @@
+<div class="modal modal--choice" id="modalChoice">
+    <div class="modal__inner">
+        <h1 class="modal__title modal__title--main">Выберите</h1>
+        <div class="modal__buttons modal__buttons--choice">
+            <button class="modal__btn modal__btn--accent" id="clientButton" type="button">Я - Клиент</button>
+            <button class="modal__btn modal__btn--model" id="modelButton" type="button">Я - Модель</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalLogin">
+    <div class="modal__inner">
+        <h1 class="modal__title">Войти как модель</h1>
+        <form action="" method="post">
+            <ul class="modal__list">
+                <li class="modal__item">
+                    <label class="label" for="login">Логин</label>
+                    <input class="field" type="text" id="login" name="login" placeholder="Введите ваш логин">
+                </li>
+                <li class="modal__item">
+                    <label class="label" for="password">Пароль</label>
+                    <input class="field field--password" type="password" id="password" name="password"
+                           placeholder="Введите ваш пароль">
+                </li>
+            </ul>
+            <button class="modal__btn-forward">Забыли пароль?</button>
+            <div class="modal__buttons modal__buttons--choice">
+                <button class="modal__btn modal__btn--accent" type="submit">Войти</button>
+                <button class="modal__btn modal__btn--gray" id="registrationButton" type="button">Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+</div>

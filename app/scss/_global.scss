@@ -13,6 +13,27 @@ html {
   overflow-x: hidden;
   @include flex-column;
 
+  &::before {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity .6s;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+  }
+
+  &--active {
+    overflow: hidden;
+    &::before {
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+
   @include r($phone) {
     font-size: 14px;
   }
