@@ -36,6 +36,9 @@
     font-weight: 600;
     margin-bottom: 16px;
     padding-left: 8px;
+    @include r($lg) {
+      font-size: 18px;
+    }
   }
 
   &__filters {

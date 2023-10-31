@@ -287,6 +287,28 @@ $(document).ready(function () {
         });
     });
 });
+$(document).ready(function () {
+    function updateErrorForSection(sectionId, minSelectedCount, errorElementId) {
+        const section = $(`[data-category="${sectionId}"]`);
+        const checkboxes = section.find(".custom-checkbox__input:checked");
+
+        if (checkboxes.length < minSelectedCount) {
+            $(`#${errorElementId}`).addClass("error--active");
+        } else {
+            $(`#${errorElementId}`).removeClass("error--active");
+        }
+    }
+
+    $(".custom-checkbox__input").on("change", function () {
+        updateErrorForSection("sex", 2, "checkboxSexError");
+        updateErrorForSection("departure", 1, "checkboxDepartureError");
+    });
+
+    $("#submitButton").on("click", function () {
+        updateErrorForSection("sex", 2, "checkboxSexError");
+        updateErrorForSection("departure", 1, "checkboxDepartureError");
+    });
+});
 
 function watchForErrors() {
     const $form = $('.registration__form');

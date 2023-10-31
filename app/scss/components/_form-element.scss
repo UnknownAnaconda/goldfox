@@ -52,8 +52,38 @@
   display: inline-block;
   font-weight: 500;
   font-family: $inter;
+  @include r($lg) {
+    margin-bottom: 2px;
+  }
 }
 
 .jq-ry-container {
   padding: 0;
+}
+
+.error {
+  color: $red;
+  display: none;
+  margin-top: 12px;
+  font-weight: 400;
+  font-size: 14px;
+
+  &__registration {
+    margin-top: -4px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+  }
+
+  &__files {
+    margin-top: 0;
+    padding-left: 8px;
+  }
+
+  &__filters {
+    margin-bottom: 14px;
+  }
+
+  &--active {
+    display: block;
+  }
 }
