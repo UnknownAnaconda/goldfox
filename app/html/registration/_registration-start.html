@@ -7,8 +7,6 @@
                     <label class="label" for="login">Логин</label>
                     <span class="error error__registration" id="loginError">Логин уже используется</span>
                     <span class="error error__registration"
-                          id="loginCyrillicError">Логин не может иметь кириллицу</span>
-                    <span class="error error__registration"
                           id="loginErrorLength">Минимальное количество символов - 5</span>
                     <span class="error error__registration" id="loginErrorSymbols">Запрещенные символы</span>
                     <input class="field" type="text" id="login" name="login" required placeholder="Придумайте логин">
@@ -21,7 +19,7 @@
                     <div class="registration__password">
                         <input class="field field--password" type="password" id="password" name="password" required
                                placeholder="Придумайте пароль">
-                        <a class="registration__control" href="#"></a>
+                        <a class="registration__control" data-target="password1" href="#"></a>
                     </div>
                 </div>
                 <div class="registration__item">

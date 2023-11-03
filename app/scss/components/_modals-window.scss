@@ -4,13 +4,19 @@
   left: 50%;
   border-radius: 24px;
   background-color: $black200;
-  padding: 32px;
+  padding: 40px 32px;
   max-width: 425px;
   width: 100%;
   opacity: 0;
   pointer-events: none;
   transform: translate(-50%, -70%);
   transition: opacity .6s, transform .6s;
+  @include r($tablet) {
+    padding: 32px;
+  }
+  @include r($phone) {
+    padding: 28px 20px;
+  }
 
   &--active {
     transform: translate(-50%, -50%);
@@ -31,6 +37,12 @@
     letter-spacing: 0.36px;
     color: #FFFBFF;
     margin-bottom: 32px;
+    @include r($tablet) {
+      font-size: 22px;
+    }
+    @include r($phone) {
+      font-size: 20px;
+    }
 
     &--main {
       font-size: 22px;
@@ -39,6 +51,14 @@
       padding-bottom: 16px;
       display: block;
       border-bottom: 2px solid #313033;
+      @include r($tablet) {
+        font-size: 20px;
+      }
+    }
+
+    &--password {
+      font-size: 20px;
+      line-height: 1.4;
     }
   }
 
@@ -119,5 +139,15 @@
     flex-direction: column;
     gap: 16px;
     margin-bottom: 22px;
+
+    &--registration {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__item {
+    &-password {
+      position: relative;
+    }
   }
 }

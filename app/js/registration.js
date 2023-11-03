@@ -4,17 +4,6 @@ import {createImageUploader} from "./components/custom-file.js";
 $(document).ready(function () {
     initializeCustomSelect();
     createImageUploader(8);
-    $('body').on('click', '.registration__control', function () {
-        const passwordInput = $('#password');
-
-        if (passwordInput.attr('type') === 'password') {
-            passwordInput.attr('type', 'text');
-            setTimeout(function () {
-                passwordInput.attr('type', 'password');
-            }, 2000);
-        }
-        return false;
-    });
 });
 $(document).ready(function () {
     const validationFields = [
@@ -22,8 +11,7 @@ $(document).ready(function () {
             input: $('#login'),
             errors: [
                 {id: 'loginErrorLength', condition: (value) => value.length < 5},
-                {id: 'loginErrorSymbols', condition: (value) => /[@!?:#$%^&*()_{}~\\/]+/.test(value)},
-                {id: 'loginCyrillicError', condition: (value) => /[а-яА-Я]/.test(value)}
+                {id: 'loginErrorSymbols', condition: (value) => !/^[a-zA-Z0-9_]+$/.test(value)}
             ]
         },
         {
