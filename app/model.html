@@ -734,5 +734,106 @@
         </nav>
     </div>
 </footer>
+<div class="modal modal--choice" id="modalChoice">
+    <div class="modal__inner">
+        <h1 class="modal__title modal__title--main">Выберите</h1>
+        <div class="modal__buttons modal__buttons--choice">
+            <button class="modal__btn modal__btn--accent" id="clientButton" type="button">Я - Клиент</button>
+            <button class="modal__btn modal__btn--model" id="modelButton" type="button">Я - Модель</button>
+        </div>
+    </div>
+</div>
+<div class="modal" id="modalLogin">
+    <div class="modal__inner">
+        <h1 class="modal__title">Войти как модель</h1>
+        <form action="" method="post">
+            <span class="error error__registration error--active">Неверно введен логин или пароль</span>
+            <ul class="modal__list">
+                <li class="modal__item">
+                    <label class="label" for="login">Логин</label>
+                    <input class="field" type="text" id="login" name="login" placeholder="Введите ваш логин" required>
+                </li>
+                <li class="modal__item">
+                    <label class="label" for="password">Пароль</label>
+                    <div class="modal__item-password">
+                        <input class="field field--password" type="password" id="password" name="password"
+                               placeholder="Введите ваш пароль" required>
+                        <a class="registration__control" data-target="password" href="#"></a>
+                    </div>
+                </li>
+            </ul>
+            <button class="modal__btn-forward">Забыли пароль?</button>
+            <div class="modal__buttons modal__buttons--choice">
+                <button class="modal__btn modal__btn--accent" type="submit">Войти</button>
+                <button class="modal__btn modal__btn--gray" id="registrationButton" type="button">Зарегистрироваться
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal" id="modalRegistration">
+    <div class="modal__inner">
+        <h1 class="modal__title">Зарегистрироваться</h1>
+        <form action="" method="post" id="formRegistration">
+            <ul class="modal__list modal__list--registration">
+                <li class="modal__item">
+                    <label class="label" for="login">Логин</label>
+                    <span class="error error__registration" id="loginModalError">Логин уже используется</span>
+                    <span class="error error__registration"
+                          id="loginModalErrorLength">Минимальное количество символов - 5</span>
+                    <span class="error error__registration" id="loginModalErrorSymbols">Запрещенные символы</span>
+                    <input class="field" type="text" id="login" name="login" placeholder="Введите ваш логин" required>
+                </li>
+                <li class="modal__item">
+                    <label class="label" for="password">Пароль</label>
+                    <span class="error error__registration" id="passwordModalError">Пароль не может иметь кириллицу</span>
+                    <span class="error error__registration"
+                          id="passwordModalErrorLength">Минимальное количество символов - 7</span>
+                    <div class="modal__item-password">
+                        <input class="field field--password" type="password" id="password" name="password"
+                               placeholder="Введите ваш пароль" required>
+                        <a class="registration__control" href="#"></a>
+                    </div>
+                </li>
+                <li class="modal__item">
+                    <label class="label" for="email">Электронная почта</label>
+                    <span class="error error__registration"
+                          id="emailModalErrorParameters">Почта не соответствует параметрам</span>
+                    <input class="field field--password" type="email" id="email" name="email"
+                           placeholder="Введите вашу почту" required>
+                </li>
+            </ul>
+            <button class="modal__btn modal__btn--accent" id="registrationButtonSubmit" type="button">
+                Зарегистрироваться
+            </button>
+        </form>
+    </div>
+</div>
+<div class="modal" id="modalPassword">
+    <div class="modal__inner">
+        <h1 class="modal__title">Сброс пароля</h1>
+        <form action="" method="post">
+            <span class="error error__registration error--active">Данной почты не существует</span>
+            <ul class="modal__list">
+                <li class="modal__item">
+                    <label class="label" for="email">Электронная почта</label>
+                    <input class="field field--password" type="email" id="email" name="email"
+                           placeholder="Введите вашу почту">
+                </li>
+            </ul>
+            <div class="modal__buttons modal__buttons--choice">
+                <button class="modal__btn modal__btn--accent" id="passwordResetBtn" type="button">Сбросить</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal" id="modalPasswordComplete">
+    <div class="modal__inner">
+        <h1 class="modal__title modal__title--password">
+            На вашу почту были отправлены инструкции по сбросу пароля
+        </h1>
+        <button class="modal__btn modal__btn--accent" id="passwordResetClose" type="button">Закрыть</button>
+    </div>
+</div>
 <script src="js/main.min.js" type="module"></script>
 <script src="js/model-page.js" type="module"></script>

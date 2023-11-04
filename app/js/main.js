@@ -80,6 +80,7 @@ $(document).ready(() => {
 });
 
 $('#formRegistration #registrationButtonSubmit').click(() => {
+    $('#formRegistration .error').removeClass('error--active');
     const emailValue = $('#email').val();
     const passwordValue = $('#formRegistration #password').val();
     const emailErrorParameters = $('#formRegistration #emailModalErrorParameters');
@@ -92,20 +93,18 @@ $('#formRegistration #registrationButtonSubmit').click(() => {
 
     if (loginValue.length < 5) {
         loginErrorLength.addClass('error--active');
-    }
-
-    if (!/^[a-zA-Z0-9_]+$/.test(loginValue)) {
+    } else if (!/^[a-zA-Z0-9_]+$/.test(loginValue)) {
         loginErrorSymbols.addClass('error--active');
     }
 
-    $('#formRegistration .error').removeClass('error--active');
-    if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(emailValue)) {
-        emailErrorParameters.addClass('error--active');
-    }
     if (/[а-яА-Я]/.test(passwordValue)) {
         passwordError.addClass('error--active');
     }
     if (passwordValue.length < 7) {
         passwordErrorLength.addClass('error--active');
+    }
+
+    if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(emailValue)) {
+        emailErrorParameters.addClass('error--active');
     }
 });

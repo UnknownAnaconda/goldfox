@@ -23,6 +23,10 @@ $(document).ready(function () {
             filtersContent.css('marginTop', '50px');
         }
     });
+    $('.model__btn').click(function () {
+        const index = $(this).index('.model__btn');
+        $('.model__phone').eq(index).toggleClass('model__phone--active');
+    });
 
     const showAllButton = $('#showAllButton');
     const modelsList = $('.models__list');

@@ -1,2 +1,6 @@
 @import '../../node_modules/rateyo/src/jquery.rateyo';
 @import '../../node_modules/swiper/swiper-bundle.min';
+
+.swiper {
+  z-index: 0;
+}
