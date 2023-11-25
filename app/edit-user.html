@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoldFox | Редактирование пользователей</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="images/x-icon">
+  <link rel="shortcut icon" href="images/icons/favicon.svg" type="images/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="body">
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="logo" href="index.html">
+                <img class="logo__img" src="images/icons/logo.svg" alt="logo" width="112" height="30">
+            </a>
+            <p class="header__text">
+                Здесь ты найдёшь всё, о чём желает твоя фантазия
+            </p>
+            <button class="header__btn btn" id="btnModalChoice" type="button">Войти</button>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="edit">
+        <div class="container">
+            <h1 class="edit__title title">Редактирование пользователя</h1>
+            <span class="edit__error error" id="editErrorSearch">Введите какое-нибудь значение</span>
+            <form class="edit__search" method="get" id="searchModel">
+                <label class="edit__label">
+                    <input class="edit__input" id="searchInput" type="text"
+                           placeholder="Введите логин, почту пользователя">
+                </label>
+                <button class="edit__btn btn" id="searchButton" type="button">Искать</button>
+            </form>
+            <ul class="edit__results"></ul>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__column footer__column-one">
+                <a class="logo" href="index.html">
+                    <img class="logo__img" src="images/icons/logo.svg" alt="логотип" width="130" height="30">
+                </a>
+                <p class="footer__about-text">
+                    GoldFox - сайт, на котором вы с лёгкостью сможете найти себе приятное развлечение
+                </p>
+                <p class="footer__author">
+                    ©GoldFox 2023, Все права защищены.
+                </p>
+            </div>
+            <div class="footer__column footer__column-two">
+                <h3 class="footer__name">Удобно</h3>
+                <p class="footer__column-text">Выбрали > Связались > Отдохнули</p>
+            </div>
+            <div class="footer__column footer__column-three">
+                <h3 class="footer__name">Круглосуточно</h3>
+                <p class="footer__column-text">Всегда работаем для вас</p>
+            </div>
+            <div class="footer__column footer__column-telegram">
+                <h3 class="footer__name--small">Наш телеграм канал</h3>
+                <a class="footer__column-link" href="">
+                    <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="path" d="M11.6457 4.1879C12.1785 3.65918 12.6224 2.60172 10.5803 3.92354C8.71582 5.24535 6.76254 6.47905 4.80926 7.80086C4.18776 8.06522 3.56626 8.06522 2.94476 7.80086C1.70177 7.44838 0.281198 6.91965 0.281198 6.91965C0.281198 6.91965 -0.695442 6.39093 0.991482 5.68596C0.991482 5.68596 8.09432 2.77797 10.4915 1.80863C11.4682 1.36803 14.5757 0.134336 14.5757 0.134336C14.5757 0.134336 16.085 -0.482511 15.9962 0.927424C15.9962 1.45615 15.6411 3.48293 15.2859 5.59784C14.7532 8.68207 14.2205 11.9425 14.2205 11.9425C14.2205 11.9425 14.1317 12.9119 13.4215 13C12.7112 13 12.0009 12.7356 11.3794 12.295C11.2018 12.2069 8.27189 10.3564 7.29525 9.47516C6.94011 9.2108 6.85132 8.77019 7.11768 8.41771C7.20647 8.32959 7.29525 8.24147 7.38404 8.15335C8.80461 6.91965 10.2252 5.59784 11.6457 4.1879Z" fill="#FFFBFF"/>
+                    </svg>
+                    Перейти
+                </a>
+            </div>
+        </div>
+        <nav class="footer__nav">
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">Главная</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">О сайте</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">Реклама</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+<div class="modal" id="modalDeleteClient">
+    <div class="modal__inner">
+        <h1 class="modal__title modal__title--password"></h1>
+        <div class="modal__buttons modal__buttons--choice">
+            <button class="modal__btn modal__btn--accent" id="cancelDeleteClient" type="button">Отменить</button>
+            <button class="modal__btn modal__btn--model" id="confirmDeleteClient" type="button">Удалить</button>
+        </div>
+    </div>
+</div>
+<script src="js/edit-user.js"></script>
+<script src="js/components/password-toggle.js"></script>

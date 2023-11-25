@@ -1,0 +1,146 @@
+.edit {
+  &__title {
+    padding-left: 0;
+  }
+
+  &__search,
+  &__link {
+    background-color: $black200;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  &__search {
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 12px;
+    transition: border-radius .4s;
+
+    &--active {
+      border-radius: 12px 12px 0 0;
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+
+    &::before {
+      @include top50;
+      @include bg;
+      position: relative;
+      content: "";
+      background-image: url("../images/icons/search.svg");
+      width: 24px;
+      height: 24px;
+      display: flex;
+    }
+  }
+
+  &__input {
+    color: $white;
+    width: 100%;
+
+    &::placeholder {
+      color: $white;
+    }
+  }
+
+  &__btn {
+    font-size: 12px;
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    &:last-child {
+      .edit__link {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+  }
+
+  &__link {
+    padding: 20px 16px;
+    text-align: left;
+    display: flex;
+    width: 100%;
+    transition: color .4s, opacity .4s;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+
+  &__error {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+
+  &__user {
+    margin-top: 40px;
+  }
+
+  &__user-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    margin-bottom: 25px;
+  }
+
+  &__root {
+    margin-bottom: 24px;
+    display: inline-flex;
+  }
+
+  &__buttons {
+    justify-content: flex-end;
+    display: flex;
+    gap: 16px;
+  }
+
+  &__action {
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    padding: 17px 28px;
+    border-radius: 16px;
+    color: $gray100;
+    border: 2px solid;
+    transition: color .4s, background-color .4s, opacity .4s;
+
+    &--reset {
+      border-color: $blue300;
+
+      &:hover {
+        background-color: $blue300;
+        color: $black100;
+      }
+    }
+
+    &--delete {
+      border-color: $red;
+
+      &:hover {
+        background-color: $red;
+        color: $black100;
+      }
+    }
+
+    &--save {
+      border-color: $accent;
+
+      &:hover {
+        background-color: $accent;
+        color: $black100;
+      }
+    }
+  }
+}

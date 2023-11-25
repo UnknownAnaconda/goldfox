@@ -1,0 +1,33 @@
+@include('components/_head.html', {
+title: 'GoldFox | Редактирование пользователей'
+})
+
+@include('components/_header.html')
+<main>
+    <section class="edit">
+        <div class="container">
+            <h1 class="edit__title title">Редактирование пользователя</h1>
+            <span class="edit__error error" id="editErrorSearch">Введите какое-нибудь значение</span>
+            <form class="edit__search" method="get" id="searchModel">
+                <label class="edit__label">
+                    <input class="edit__input" id="searchInput" type="text"
+                           placeholder="Введите логин, почту пользователя">
+                </label>
+                <button class="edit__btn btn" id="searchButton" type="button">Искать</button>
+            </form>
+            <ul class="edit__results"></ul>
+        </div>
+    </section>
+</main>
+@include('components/_footer.html')
+<div class="modal" id="modalDeleteClient">
+    <div class="modal__inner">
+        <h1 class="modal__title modal__title--password"></h1>
+        <div class="modal__buttons modal__buttons--choice">
+            <button class="modal__btn modal__btn--accent" id="cancelDeleteClient" type="button">Отменить</button>
+            <button class="modal__btn modal__btn--model" id="confirmDeleteClient" type="button">Удалить</button>
+        </div>
+    </div>
+</div>
+<script src="js/edit-user.js"></script>
+<script src="js/components/password-toggle.js"></script>

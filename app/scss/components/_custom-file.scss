@@ -61,4 +61,10 @@
   &__input {
     display: none;
   }
+
+  &__preview {
+    border-radius: 12px;
+    @include objectCoverBg;
+    object-position: top;
+  }
 }

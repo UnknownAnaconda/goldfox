@@ -1,0 +1,22 @@
+@include('components/_head.html', {
+title: 'GoldFox | Редактирование моделей'
+})
+
+@include('components/_header.html')
+<main>
+    <section class="edit">
+        <div class="container">
+            <h1 class="edit__title title">Редактирование модели</h1>
+            <span class="edit__error error" id="editErrorSearch">Введите какое-нибудь значение</span>
+            <form class="edit__search" method="get" id="searchModel">
+                <label class="edit__label">
+                    <input class="edit__input" id="searchInput" type="text" placeholder="Введите имя, логин модели">
+                </label>
+                <button class="edit__btn btn" id="searchButton" type="button">Искать</button>
+            </form>
+            <ul class="edit__results"></ul>
+        </div>
+    </section>
+</main>
+@include('components/_footer.html')
+<script src="js/edit-model.js" type="module"></script>

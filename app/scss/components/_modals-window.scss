@@ -1,5 +1,5 @@
 .modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   border-radius: 24px;
@@ -59,6 +59,10 @@
     &--password {
       font-size: 20px;
       line-height: 1.4;
+    }
+
+    &--span {
+      color: $red;
     }
   }
 

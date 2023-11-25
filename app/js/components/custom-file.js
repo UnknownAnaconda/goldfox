@@ -44,6 +44,13 @@ export function createImageUploader(maxImages) {
                 const imageNumber = document.createElement("span");
                 imageNumber.textContent = `Картинка ${imageCount}.${fileExtension}`;
 
+                const imagePreview = document.createElement("img");
+                imagePreview.className = "custom-file__preview";
+                imagePreview.src = URL.createObjectURL(file);
+                imagePreview.alt = file.name;
+                imagePreview.width = 180;
+                imagePreview.height = 144;
+
                 const removeButton = document.createElement("button");
                 removeButton.className = "custom-file__remove";
                 removeButton.type = "button";
@@ -61,6 +68,7 @@ export function createImageUploader(maxImages) {
                     updateImageNumbers();
                 });
 
+                imageContainer.appendChild(imagePreview);
                 imageContainer.appendChild(imageNumber);
                 imageContainer.appendChild(removeButton);
                 uploadedImages.appendChild(imageContainer);

@@ -15,6 +15,7 @@ html {
 
   &::before {
     @include pseudo;
+    position: fixed;
     top: 0;
     left: 0;
     height: 100%;
@@ -28,6 +29,7 @@ html {
 
   &--active {
     overflow: hidden;
+
     &::before {
       z-index: 1;
       opacity: 1;
@@ -43,6 +45,31 @@ html {
   max-width: 1420px;
   padding: 0 15px;
   margin: 0 auto;
+}
+
+.title {
+  margin-bottom: 32px;
+  font-size: 32px;
+  letter-spacing: 0.48px;
+  font-weight: 700;
+  padding-left: 32px;
+  @media (max-width: 1460px) {
+    padding-left: 22px;
+  }
+  @include r($desktop) {
+    font-size: 28px;
+  }
+  @media (max-width: 1100px) {
+    padding-left: 10px;
+  }
+  @include r($tablet) {
+    padding-left: 0;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+  @include r($sm) {
+    font-size: 24px;
+  }
 }
 
 .btn {

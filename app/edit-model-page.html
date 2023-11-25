@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoldFox | Редактирование ✨🌸Anastasia 🌸✨</title>
+  <link rel="icon" href="images/icons/favicon.svg" type="images/x-icon">
+  <link rel="shortcut icon" href="images/icons/favicon.svg" type="images/x-icon">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body class="body">
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+            <a class="logo" href="index.html">
+                <img class="logo__img" src="images/icons/logo.svg" alt="logo" width="112" height="30">
+            </a>
+            <p class="header__text">
+                Здесь ты найдёшь всё, о чём желает твоя фантазия
+            </p>
+            <button class="header__btn btn" id="btnModalChoice" type="button">Войти</button>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="edit">
+        <div class="container">
+            <form class="registration__form" id="registration__form" action="">
+                <section class="registration">
+                    <div class="container">
+                        <h1 class="title">Редактирование модели ✨🌸Anastasia 🌸✨</h1>
+                        <ul class="registration__columns">
+                            <li class="registration__column">
+                                <div class="registration__item">
+                                    <label class="label" for="login">Логин</label>
+                                    <span class="error error__registration"
+                                          id="loginError">Логин уже используется</span>
+                                    <span class="error error__registration"
+                                          id="loginErrorLength">Минимальное количество символов - 5</span>
+                                    <span class="error error__registration"
+                                          id="loginErrorSymbols">Запрещенные символы</span>
+                                    <input class="field" type="text" id="login" name="login" required
+                                           placeholder="Придумайте логин" value="TestValue">
+                                </div>
+                                <div class="registration__item">
+                                    <label class="label" for="password">Пароль</label>
+                                    <span class="error error__registration"
+                                          id="passwordError">Пароль не может иметь кириллицу</span>
+                                    <span class="error error__registration"
+                                          id="passwordErrorLength">Минимальное количество символов - 7</span>
+                                    <div class="registration__password">
+                                        <input class="field field--password" value="Test Value" type="password"
+                                               id="password" name="password"
+                                               required
+                                               placeholder="Придумайте пароль">
+                                        <a class="registration__control" data-target="password1" href="#"></a>
+                                    </div>
+                                </div>
+                                <div class="registration__item">
+                                    <label class="label" for="email">Электронная почта</label>
+                                    <span class="error error__registration"
+                                          id="emailErrorParameters">Почта не соответствует параметрам</span>
+                                    <input class="field" type="email" value="testvalue@gmail.com" id="email"
+                                           name="email" required
+                                           placeholder="Введите вашу почту">
+                                </div>
+                            </li>
+                            <li class="registration__column">
+                                <div class="registration__item">
+                                    <label class="label" for="nickname">Ваш псевдоним</label>
+                                    <span class="error error__registration"
+                                          id="nicknameErrorLength">Минимальное количество символов - 3</span>
+                                    <span class="error error__registration" id="nicknameErrorSymbols">Запрещенные символы</span>
+                                    <input class="field" type="text" value="Test Value" id="nickname" name="nickname"
+                                           required
+                                           placeholder="Введите псевдоним">
+                                </div>
+                                <div class="registration__item registration__item--two">
+                                    <div>
+                                        <label class="label" for="age">Возраст</label>
+                                        <span class="error error__registration"
+                                              id="ageErrorMin">Мин. возраст - 18</span>
+                                        <span class="error error__registration"
+                                              id="ageErrorMax">Макс. возраст - 80</span>
+                                        <input class="field" type="number" value="23" id="age" name="age" required
+                                               placeholder="Введите возраст">
+                                    </div>
+                                    <div>
+                                        <label class="label" for="breast">Грудь</label>
+                                        <span class="error error__registration"
+                                              id="breastErrorMin">Мин. размер - 1</span>
+                                        <span class="error error__registration"
+                                              id="breastErrorMax">Макс. размер - 5</span>
+                                        <input class="field" type="number" value="3" id="breast" name="breast" required
+                                               placeholder="Введите размер">
+                                    </div>
+                                </div>
+                                <div class="registration__item registration__item--two">
+                                    <div>
+                                        <label class="label" for="weight">Вес (в кг)</label>
+                                        <span class="error error__registration"
+                                              id="weightErrorMin">Мин. вес - 45кг</span>
+                                        <span class="error error__registration"
+                                              id="weightErrorMax">Макс. вес - 150кг</span>
+                                        <input class="field" type="number" value="65" id="weight" name="weight" required
+                                               placeholder="Введите вес">
+                                    </div>
+                                    <div>
+                                        <label class="label" for="height">Рост (в см)</label>
+                                        <span class="error error__registration"
+                                              id="heightErrorMin">Мин. рост - 135см</span>
+                                        <span class="error error__registration"
+                                              id="heightErrorMax">Макс. рост - 240см</span>
+                                        <input class="field" type="number" value="170" id="height" name="height"
+                                               required
+                                               placeholder="Введите рост">
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="registration__column">
+                                <div class="registration__item registration__item--two">
+                                    <div>
+                                        <label class="label" for="haircut">Интимная стрижка</label>
+                                        <span class="error error__registration"
+                                              id="haircutErrorLength">Минимальное количество символов - 3</span>
+                                        <span class="error error__registration"
+                                              id="haircutErrorSymbols">Запрещенные символы</span>
+                                        <input class="field" type="text" value="Кустарник" id="haircut" name="haircut"
+                                               required
+                                               placeholder="Введите значение">
+                                    </div>
+                                    <div>
+                                        <label class="label" for="appearance">Внешность</label>
+                                        <span class="error error__registration"
+                                              id="appearanceErrorLength">Минимальное количество символов - 4</span>
+                                        <span class="error error__registration"
+                                              id="appearanceErrorSymbols">Запрещенные символы</span>
+                                        <input class="field" type="text" value="Славянская" id="appearance"
+                                               name="appearance" required
+                                               placeholder="Введите внешность">
+                                    </div>
+                                </div>
+                                <div class="registration__item registration__item--two">
+                                    <div>
+                                        <label class="label" for="hair_color">Цвет волос</label>
+                                        <span class="error error__registration"
+                                              id="hairColorErrorLength">Минимальное количество символов - 5</span>
+                                        <span class="error error__registration"
+                                              id="hairColorErrorSymbols">Запрещенные символы</span>
+                                        <input class="field" type="text" value="Розовый" id="hair_color"
+                                               name="hair_color" required
+                                               placeholder="Введите цвет">
+                                    </div>
+                                    <div>
+                                        <label class="label" for="nationality">Национальность</label>
+                                        <span class="error error__registration"
+                                              id="nationalityErrorLength">Минимальное количество символов - 3</span>
+                                        <span class="error error__registration"
+                                              id="nationalityErrorSymbols">Запрещенные символы</span>
+                                        <input class="field" type="text" value="Русская" id="nationality"
+                                               name="nationality" required
+                                               placeholder="Введите рост">
+                                    </div>
+                                </div>
+                                <div class="registration__item">
+                                    <label class="label" for="area">Район</label>
+                                    <span class="error error__registration"
+                                          id="areaErrorLength">Минимальное количество символов - 6</span>
+                                    <span class="error error__registration" id="areaErrorEmpty">Обязательное поле</span>
+                                    <span class="error error__registration"
+                                          id="areaErrorSymbols">Запрещенные символы</span>
+                                    <input class="field" type="text" value="Кобылинский" id="area" name="area" required
+                                           placeholder="Введите район">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <div class="registration__filters">
+                    <div class="container">
+                        <ul class="filters__list">
+                            <li class="filters__item filters__item--one">
+                                <div class="filters__chapter" data-category="sex">
+                                    <span class="filters__name">Секс</span>
+                                    <span class="error error__filters"
+                                          id="checkboxSexError">Выберите минимум два пункта</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="sexOption1"
+                                                       name="sexOptions[]"
+                                                       value="Секс классический">
+                                                <span class="checkmark"></span>
+                                                Секс классический
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="sexOption2"
+                                                       name="sexOptions[]"
+                                                       value="Секс анальный">
+                                                <span class="checkmark"></span>
+                                                Секс анальный
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="sexOption3"
+                                                       name="sexOptions[]"
+                                                       value="Секс групповой">
+                                                <span class="checkmark"></span>
+                                                Секс групповой
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="sexOption4"
+                                                       name="sexOptions[]"
+                                                       value="Секс лесбийский">
+                                                <span class="checkmark"></span>
+                                                Секс лесбийский
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filters__chapter" data-category="minet">
+                                    <span class="filters__name">Минет</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="minetOption1"
+                                                       name="minetOptions[]"
+                                                       value="Минет в резинке">
+                                                <span class="checkmark"></span>
+                                                Минет в резинке
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="minetOption2"
+                                                       name="minetOptions[]"
+                                                       value="Минет без резинки">
+                                                <span class="checkmark"></span>
+                                                Минет без резинки
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="minetOption3"
+                                                       name="minetOptions[]"
+                                                       value="Минет глубокий">
+                                                <span class="checkmark"></span>
+                                                Минет глубокий
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="minetOption4"
+                                                       name="minetOptions[]"
+                                                       value="Минет горловой">
+                                                <span class="checkmark"></span>
+                                                Минет горловой
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="minetOption5"
+                                                       name="minetOptions[]"
+                                                       value="Минет в машине">
+                                                <span class="checkmark"></span>
+                                                Минет в машине
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filters__chapter" data-category="departure">
+                                    <span class="filters__name">Выезд</span>
+                                    <span class="error error__filters"
+                                          id="checkboxDepartureError">Выберите минимум один пункт</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="departureOption1"
+                                                       name="departureOptions[]" value="Отель">
+                                                <span class="checkmark"></span>
+                                                Отель
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="departureOption2"
+                                                       name="departureOptions[]" value="Квартира">
+                                                <span class="checkmark"></span>
+                                                Квартира
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="departureOption3"
+                                                       name="departureOptions[]" value="Сауна">
+                                                <span class="checkmark"></span>
+                                                Сауна
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="filters__item">
+                                <div class="filters__chapter">
+                                    <span class="filters__name">Особенности</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="featureOption1"
+                                                       name="featureOptions[]" value="Кунилингус">
+                                                <span class="checkmark"></span>
+                                                Кунилингус
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="featureOption2"
+                                                       name="featureOptions[]" value="Целуюсь">
+                                                <span class="checkmark"></span>
+                                                Целуюсь
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="featureOption3"
+                                                       name="featureOptions[]" value="Игрушки">
+                                                <span class="checkmark"></span>
+                                                Игрушки
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="featureOption4"
+                                                       name="featureOptions[]" value="Окончание на грудь">
+                                                <span class="checkmark"></span>
+                                                Окончание на грудь
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="featureOption5"
+                                                       name="featureOptions[]" value="Окончание на лицо">
+                                                <span class="checkmark"></span>
+                                                Окончание на лицо
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="featureOption6"
+                                                       name="featureOptions[]" value="Окончание в рот">
+                                                <span class="checkmark"></span>
+                                                Окончание в рот
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="featureOption7"
+                                                       name="featureOptions[]" value="Поза 69">
+                                                <span class="checkmark"></span>
+                                                Поза 69
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filters__chapter">
+                                    <span class="filters__name">Разное</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="otherOption1"
+                                                       name="otherOptions[]"
+                                                       value="GFE">
+                                                <span class="checkmark"></span>
+                                                GFE
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="otherOption2"
+                                                       name="otherOptions[]"
+                                                       value="Сопровождение">
+                                                <span class="checkmark"></span>
+                                                Сопровождение
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="otherOption3"
+                                                       name="otherOptions[]"
+                                                       value="Ролевые игры">
+                                                <span class="checkmark"></span>
+                                                Ролевые игры
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="otherOption4"
+                                                       name="otherOptions[]"
+                                                       value="Фото / Видео съемка">
+                                                <span class="checkmark"></span>
+                                                Фото / Видео съемка
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="otherOption5"
+                                                       name="otherOptions[]"
+                                                       value="Виртуальный секс">
+                                                <span class="checkmark"></span>
+                                                Виртуальный секс
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="otherOption6"
+                                                       name="otherOptions[]"
+                                                       value="Секс по телефону">
+                                                <span class="checkmark"></span>
+                                                Секс по телефону
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="otherOption7"
+                                                       name="otherOptions[]"
+                                                       value="Клизма">
+                                                <span class="checkmark"></span>
+                                                Клизма
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="filters__item">
+                                <div class="filters__chapter">
+                                    <span class="filters__name">Экстрим</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="extremeOption1"
+                                                       name="extremeOptions[]" value="Страпон">
+                                                <span class="checkmark"></span>
+                                                Страпон
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="extremeOption2"
+                                                       name="extremeOptions[]" value="Анилингус клиенту">
+                                                <span class="checkmark"></span>
+                                                Анилингус клиенту
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="extremeOption3"
+                                                       name="extremeOptions[]" value="Анилингус">
+                                                <span class="checkmark"></span>
+                                                Анилингус
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="extremeOption4"
+                                                       name="extremeOptions[]" value="Золотой дождь клиенту">
+                                                <span class="checkmark"></span>
+                                                Золотой дождь клиенту
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="extremeOption5"
+                                                       name="extremeOptions[]" value="Золотой дождь">
+                                                <span class="checkmark"></span>
+                                                Золотой дождь
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="extremeOption6"
+                                                       name="extremeOptions[]" value="Фистинг анальный клиенту">
+                                                <span class="checkmark"></span>
+                                                Фистинг анальный клиенту
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="extremeOption7"
+                                                       name="extremeOptions[]" value="Фистинг анальный">
+                                                <span class="checkmark"></span>
+                                                Фистинг анальный
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="extremeOption8"
+                                                       name="extremeOptions[]" value="Фистинг классический">
+                                                <span class="checkmark"></span>
+                                                Фистинг классический
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="extremeOption9"
+                                                       name="extremeOptions[]" value="Фингеринг">
+                                                <span class="checkmark"></span>
+                                                Фингеринг
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filters__chapter">
+                                    <span class="filters__name">Массаж</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="massageOption1"
+                                                       name="massageOptions[]" value="Массаж классический">
+                                                <span class="checkmark"></span>
+                                                Массаж классический
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="massageOption2"
+                                                       name="massageOptions[]" value="Массаж профессиональный">
+                                                <span class="checkmark"></span>
+                                                Массаж профессиональный
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="massageOption3"
+                                                       name="massageOptions[]" value="Массаж расслабляющий">
+                                                <span class="checkmark"></span>
+                                                Массаж расслабляющий
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="massageOption4"
+                                                       name="massageOptions[]" value="Массаж урологический">
+                                                <span class="checkmark"></span>
+                                                Массаж урологический
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="massageOption5"
+                                                       name="massageOptions[]" value="Массаж эротический">
+                                                <span class="checkmark"></span>
+                                                Массаж эротический
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="massageOption6"
+                                                       name="massageOptions[]" value="Массаж семейной паре">
+                                                <span class="checkmark"></span>
+                                                Массаж семейной паре
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="filters__item">
+                                <div class="filters__chapter">
+                                    <span class="filters__name">Садо-Мазо</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="bdsmOption1"
+                                                       name="bdsmOptions[]"
+                                                       value="Госпожа">
+                                                <span class="checkmark"></span>
+                                                Госпожа
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="bdsmOption2"
+                                                       name="bdsmOptions[]"
+                                                       value="Доминирование">
+                                                <span class="checkmark"></span>
+                                                Доминирование
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="bdsmOption3"
+                                                       name="bdsmOptions[]"
+                                                       value="Рабыня">
+                                                <span class="checkmark"></span>
+                                                Рабыня
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="bdsmOption4"
+                                                       name="bdsmOptions[]"
+                                                       value="Подчинение">
+                                                <span class="checkmark"></span>
+                                                Подчинение
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="bdsmOption5"
+                                                       name="bdsmOptions[]"
+                                                       value="Бондаж">
+                                                <span class="checkmark"></span>
+                                                Бондаж
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="bdsmOption6"
+                                                       name="bdsmOptions[]"
+                                                       value="Порка">
+                                                <span class="checkmark"></span>
+                                                Порка
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="bdsmOption7"
+                                                       name="bdsmOptions[]"
+                                                       value="Фетиш">
+                                                <span class="checkmark"></span>
+                                                Фетиш
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="bdsmOption8"
+                                                       name="bdsmOptions[]"
+                                                       value="Трамплинг">
+                                                <span class="checkmark"></span>
+                                                Трамплинг
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="bdsmOption9"
+                                                       name="bdsmOptions[]"
+                                                       value="Фейсситинг">
+                                                <span class="checkmark"></span>
+                                                Фейсситинг
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox" id="bdsmOption10"
+                                                       name="bdsmOptions[]"
+                                                       value="Шибари">
+                                                <span class="checkmark"></span>
+                                                Шибари
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="filters__chapter">
+                                    <span class="filters__name">Стриптиз</span>
+                                    <div class="filters__chapter-items">
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="stripteaseOption1"
+                                                       name="stripteaseOptions[]" value="Стриптиз Профи">
+                                                <span class="checkmark"></span>
+                                                Стриптиз Профи
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="stripteaseOption2"
+                                                       name="stripteaseOptions[]" value="Стриптиз Не профи">
+                                                <span class="checkmark"></span>
+                                                Стриптиз Не профи
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" type="checkbox"
+                                                       id="stripteaseOption3"
+                                                       name="stripteaseOptions[]" value="Лесби откровенное">
+                                                <span class="checkmark"></span>
+                                                Лесби откровенное
+                                            </label>
+                                        </div>
+                                        <div class="filters__chapter-item">
+                                            <label class="custom-checkbox">
+                                                <input class="custom-checkbox__input" checked type="checkbox"
+                                                       id="stripteaseOption4"
+                                                       name="stripteaseOptions[]" value="Лесби-шоу лёгкое">
+                                                <span class="checkmark"></span>
+                                                Лесби-шоу лёгкое
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="container">
+                    <ul class="registration__columns">
+                        <li class="registration__column">
+                            <div class="registration__item">
+                                <label class="label" for="age_limit_ot">Ограничение по возрасту</label>
+                                <span class="error error__registration" id="ageMaxMinLimitErrorLength">
+                                    Макс. возраст не может быть меньше минимального
+                                </span>
+                                <span class="error error__registration" id="ageMinLimitErrorLength">
+                                    Мин. возраст не может быть меньше 18
+                                </span>
+                                <span class="error error__registration" id="ageMaxLimitErrorLength">
+                                    Макс. возраст не может быть больше 90
+                                </span>
+                                <div class="registration__item--two">
+                                    <input class="field" type="number" id="age_limit_ot" name="age_limit_ot" required
+                                           placeholder="От" value="19">
+                                    <input class="field" type="number" id="age_limit_do" name="age_limit_do" required
+                                           placeholder="До" value="54">
+                                </div>
+                            </div>
+                            <div class="registration__item">
+                                <label class="label" for="work_limit_ot">Время работы</label>
+                                <span class="error error__registration" id="work_limitError">
+                                    Неверный формат времени, пример - 00:00
+                                </span>
+                                <div class="registration__item--two">
+                                    <input class="field" type="text" value="00:00" id="work_limit_ot"
+                                           name="age_limit_ot" required
+                                           placeholder="От"
+                                           data-time-input>
+                                    <input class="field" type="text" value="12:00" id="work_limit_do"
+                                           name="age_limit_do" required
+                                           placeholder="До"
+                                           data-time-input>
+                                </div>
+                            </div>
+                            <div class="registration__item">
+                                <label class="label" for="phone_clients">Номер телефона для клиентов</label>
+                                <input class="field" type="text" value="+79304939954" id="phone_clients"
+                                       name="phone_clients" data-tel-input
+                                       required
+                                       placeholder="Введите номер телефона">
+                            </div>
+                            <div class="registration__item">
+                                <label class="label" for="phone_admin">
+                                    Ваши контактные данные для связи (Увидит только Администрация)
+                                </label>
+                                <input class="field" type="text" value="+79304939954" id="phone_admin"
+                                       name="phone_admin" data-tel-input
+                                       required
+                                       placeholder="Введите номер телефона">
+                            </div>
+                            <div class="registration__item">
+                                <label class="label" for="telegram">Ваш тег Telegram</label>
+                                <span class="error error__registration" id="telegramError">
+                    Запрещенные символы
+                </span>
+                                <input class="field" type="text" value="@psower" id="telegram" name="telegram" required
+                                       placeholder="Введите ваш тег">
+                            </div>
+                            <div class="registration__item">
+                                <label class="label" for="whatsapp">Ваш номер Whatsapp</label>
+                                <input class="field" type="text" value="+79304939954" id="whatsapp" name="whatsapp"
+                                       data-tel-input required
+                                       placeholder="Введите ваш номер">
+                            </div>
+                        </li>
+                        <li class="registration__column">
+                            <div class="registration__item">
+                                <label class="label" for="description">Описание для клиентов</label>
+                                <span class="error error__registration" id="descriptionError">
+                    Минимальное количество символов - 80
+                </span>
+                                <span class="error error__registration" id="descriptionScriptError">
+                    Запрещенные символы
+                </span>
+                                <textarea class="field textarea" id="description" name="description" required
+                                          placeholder="Введите описание"></textarea>
+                            </div>
+                            <div class="registration__item registration__item--photo">
+                                <label class="registration__label label" for="fileInput">Ваши фотографии</label>
+                                <span class="error error__files" id="photosError">
+                    Ваш файл имеет неверный формат. Пожалуйста, выберите изображение в формате PNG, WebP, JPEG или JPG.
+                </span>
+                                <span class="error error__files" id="photosLimitMinError">
+                    Минимальное количество фото - 1
+                </span>
+                                <span class="error error__files" id="photosLimitMaxError">
+                    Максимальное количество фото - 8
+                </span>
+                                <ul class="custom-file__items" id="uploadedImages"></ul>
+                                <label class="custom-file__upload" for="fileInput">
+                                    Загрузить
+                                    <input class="custom-file__input" type="file" id="fileInput" multiple
+                                           accept="image/png, image/webp, image/jpeg, image/jpg">
+                                </label>
+                            </div>
+                        </li>
+                        <li class="registration__column registration__column--bifurcation">
+                            <div class="registration__bifurcation">
+                                <div>
+                                    <h3 class="registration__subtitle">Цены у вас</h3>
+                                    <div class="registration__item">
+                                        <div>
+                                            <label class="label" for="express_price">Экспресс</label>
+                                            <span class="error error__registration" id="expressPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="express_price" name="express_price"
+                                                   required
+                                                   placeholder="От" value="3200">
+                                        </div>
+                                        <div>
+                                            <label class="label" for="hour1_price">1 час</label>
+                                            <span class="error error__registration" id="hour1PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="hour1_price" name="hour1_price"
+                                                   required
+                                                   placeholder="От" value="3200">
+                                        </div>
+                                        <div>
+                                            <label class="label" for="hour2_price">2 часа</label>
+                                            <span class="error error__registration" id="hour2PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="hour2_price" name="hour2_price"
+                                                   required
+                                                   placeholder="От" value="3200">
+                                        </div>
+                                        <div>
+                                            <label class="label" for="night_price">Вся ночь</label>
+                                            <span class="error error__registration" id="nightPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="night_price" name="night_price"
+                                                   required
+                                                   placeholder="От" value="3200">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h3 class="registration__subtitle">Цены у клиента</h3>
+                                    <div class="registration__item">
+                                        <div>
+                                            <label class="label" for="client_express_price">Экспресс</label>
+                                            <span class="error error__registration" id="clientExpressPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="client_express_price"
+                                                   name="client_express_price"
+                                                   required placeholder="От" value="3200">
+                                        </div>
+                                        <div>
+                                            <label class="label" for="client_hour1_price">1 час</label>
+                                            <span class="error error__registration" id="clientHour1PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="client_hour1_price"
+                                                   name="client_hour1_price"
+                                                   required placeholder="От" value="3200">
+                                        </div>
+                                        <div>
+                                            <label class="label" for="client_hour2_price">2 часа</label>
+                                            <span class="error error__registration" id="clientHour2PriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="client_hour2_price"
+                                                   name="client_hour2_price"
+                                                   required placeholder="От" value="3200">
+                                        </div>
+                                        <div>
+                                            <label class="label" for="client_night_price">Вся ночь</label>
+                                            <span class="error error__registration" id="clientNightPriceError">
+                                Мин. прайс - 2000₽ <br>макс. - 10 000 000₽
+                            </span>
+                                            <input class="field" type="number" id="client_night_price"
+                                                   name="client_night_price"
+                                                   required placeholder="От" value="3200">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="registration__actions">
+                                <button class="registration__btn registration__btn--delete btn" type="button"
+                                        id="deleteModel">Удалить анкету
+                                </button>
+                                <button class="registration__btn btn" type="submit" id="submitButton">Сохранить</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+<div class="modal" id="modalDeleteModel">
+    <div class="modal__inner">
+        <h1 class="modal__title modal__title--password">
+            Вы действительно хотите удалить модель <span class="modal__title--span" id="modelLoginSpan"></span>?
+        </h1>
+        <div class="modal__buttons modal__buttons--choice">
+            <button class="modal__btn modal__btn--accent" id="cancelDeleteModel" type="button">Отменить</button>
+            <button class="modal__btn modal__btn--model" id="confirmDeleteModel" type="button">Удалить</button>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__column footer__column-one">
+                <a class="logo" href="index.html">
+                    <img class="logo__img" src="images/icons/logo.svg" alt="логотип" width="130" height="30">
+                </a>
+                <p class="footer__about-text">
+                    GoldFox - сайт, на котором вы с лёгкостью сможете найти себе приятное развлечение
+                </p>
+                <p class="footer__author">
+                    ©GoldFox 2023, Все права защищены.
+                </p>
+            </div>
+            <div class="footer__column footer__column-two">
+                <h3 class="footer__name">Удобно</h3>
+                <p class="footer__column-text">Выбрали > Связались > Отдохнули</p>
+            </div>
+            <div class="footer__column footer__column-three">
+                <h3 class="footer__name">Круглосуточно</h3>
+                <p class="footer__column-text">Всегда работаем для вас</p>
+            </div>
+            <div class="footer__column footer__column-telegram">
+                <h3 class="footer__name--small">Наш телеграм канал</h3>
+                <a class="footer__column-link" href="">
+                    <svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="path" d="M11.6457 4.1879C12.1785 3.65918 12.6224 2.60172 10.5803 3.92354C8.71582 5.24535 6.76254 6.47905 4.80926 7.80086C4.18776 8.06522 3.56626 8.06522 2.94476 7.80086C1.70177 7.44838 0.281198 6.91965 0.281198 6.91965C0.281198 6.91965 -0.695442 6.39093 0.991482 5.68596C0.991482 5.68596 8.09432 2.77797 10.4915 1.80863C11.4682 1.36803 14.5757 0.134336 14.5757 0.134336C14.5757 0.134336 16.085 -0.482511 15.9962 0.927424C15.9962 1.45615 15.6411 3.48293 15.2859 5.59784C14.7532 8.68207 14.2205 11.9425 14.2205 11.9425C14.2205 11.9425 14.1317 12.9119 13.4215 13C12.7112 13 12.0009 12.7356 11.3794 12.295C11.2018 12.2069 8.27189 10.3564 7.29525 9.47516C6.94011 9.2108 6.85132 8.77019 7.11768 8.41771C7.20647 8.32959 7.29525 8.24147 7.38404 8.15335C8.80461 6.91965 10.2252 5.59784 11.6457 4.1879Z" fill="#FFFBFF"/>
+                    </svg>
+                    Перейти
+                </a>
+            </div>
+        </div>
+        <nav class="footer__nav">
+            <ul class="footer__list">
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">Главная</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">О сайте</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">Реклама</a>
+                </li>
+                <li class="footer__item">
+                    <a class="footer__link" href="index.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+<script>
+    const deleteModelBtn = document.getElementById('deleteModel');
+    const modalDeleteModel = document.getElementById('modalDeleteModel');
+    const body = document.body;
+    const modelLoginSpan = document.getElementById('modelLoginSpan');
+
+    deleteModelBtn.addEventListener('click', function () {
+        modalDeleteModel.classList.add('modal--active');
+        body.classList.add('body--active');
+        modelLoginSpan.textContent = document.getElementById('login').value;
+    });
+</script>
+<script src="js/main.min.js" type="module"></script>
+<script src="js/registration.js" type="module"></script>
+<script src="js/components/data-time.js"></script>
+<script src="js/components/phone-mask.js"></script>
+<script src="js/components/password-toggle.js"></script>
